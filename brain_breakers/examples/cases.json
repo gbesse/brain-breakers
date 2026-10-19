@@ -1,0 +1,169 @@
+[
+  {
+    "id": "deleted-source-resurrects",
+    "documents": [
+      {
+        "id": "policy",
+        "tenant": "tenant-A",
+        "key": "refund_window",
+        "value": "30 days",
+        "revision": 1
+      },
+      {
+        "id": "noise-1",
+        "tenant": "tenant-A",
+        "key": "lamp_colour",
+        "value": "blue",
+        "revision": 1
+      },
+      {
+        "id": "noise-2",
+        "tenant": "tenant-A",
+        "key": "shipping_city",
+        "value": "Lyon",
+        "revision": 1
+      }
+    ],
+    "operations": [
+      {
+        "type": "delete",
+        "id": "policy"
+      }
+    ],
+    "query": {
+      "tenant": "tenant-A",
+      "key": "refund_window"
+    },
+    "injected_fault": "drop_delete"
+  },
+  {
+    "id": "correction-keeps-stale-index",
+    "documents": [
+      {
+        "id": "policy",
+        "tenant": "tenant-A",
+        "key": "refund_window",
+        "value": "30 days",
+        "revision": 1
+      },
+      {
+        "id": "noise-1",
+        "tenant": "tenant-A",
+        "key": "lamp_colour",
+        "value": "blue",
+        "revision": 1
+      },
+      {
+        "id": "noise-2",
+        "tenant": "tenant-A",
+        "key": "shipping_city",
+        "value": "Lyon",
+        "revision": 1
+      }
+    ],
+    "operations": [
+      {
+        "type": "upsert",
+        "document": {
+          "id": "policy",
+          "tenant": "tenant-A",
+          "key": "refund_window",
+          "value": "14 days",
+          "revision": 2
+        }
+      }
+    ],
+    "query": {
+      "tenant": "tenant-A",
+      "key": "refund_window"
+    },
+    "injected_fault": "drop_update"
+  },
+  {
+    "id": "tenant-canary-leak",
+    "documents": [
+      {
+        "id": "policy",
+        "tenant": "tenant-A",
+        "key": "refund_window",
+        "value": "30 days",
+        "revision": 1
+      },
+      {
+        "id": "noise-1",
+        "tenant": "tenant-A",
+        "key": "lamp_colour",
+        "value": "blue",
+        "revision": 1
+      },
+      {
+        "id": "noise-2",
+        "tenant": "tenant-A",
+        "key": "shipping_city",
+        "value": "Lyon",
+        "revision": 1
+      }
+    ],
+    "operations": [
+      {
+        "type": "upsert",
+        "document": {
+          "id": "tenant-B-secret",
+          "tenant": "tenant-B",
+          "key": "refund_window",
+          "value": "CANARY-TENANT-B-ONLY",
+          "revision": 99
+        }
+      }
+    ],
+    "query": {
+      "tenant": "tenant-A",
+      "key": "refund_window"
+    },
+    "injected_fault": "ignore_scope"
+  },
+  {
+    "id": "same-answer-different-support",
+    "documents": [
+      {
+        "id": "policy",
+        "tenant": "tenant-A",
+        "key": "refund_window",
+        "value": "30 days",
+        "revision": 1
+      },
+      {
+        "id": "independent-copy",
+        "tenant": "tenant-A",
+        "key": "refund_window",
+        "value": "30 days",
+        "revision": 1
+      },
+      {
+        "id": "noise-1",
+        "tenant": "tenant-A",
+        "key": "lamp_colour",
+        "value": "blue",
+        "revision": 1
+      },
+      {
+        "id": "noise-2",
+        "tenant": "tenant-A",
+        "key": "shipping_city",
+        "value": "Lyon",
+        "revision": 1
+      }
+    ],
+    "operations": [
+      {
+        "type": "delete",
+        "id": "policy"
+      }
+    ],
+    "query": {
+      "tenant": "tenant-A",
+      "key": "refund_window"
+    },
+    "injected_fault": "drop_delete"
+  }
+]

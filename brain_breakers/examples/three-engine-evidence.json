@@ -1,0 +1,4422 @@
+{
+  "trials": [
+    {
+      "case_id": "deleted-source-resurrects",
+      "backend": "sqlite_fts5",
+      "injected": {
+        "case_id": "deleted-source-resurrects",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "drop_delete",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "stale_retrieval",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": null,
+            "source_ids": []
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "24ff6dcde4b1f0a3dda328fd4843b61202fbc9f5d3de14e0b190616af0de7d51"
+      },
+      "repaired": {
+        "case_id": "deleted-source-resurrects",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": null,
+            "source_ids": []
+          },
+          "answer": {
+            "value": null,
+            "source_ids": []
+          },
+          "retrieved": [],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": null,
+              "source_ids": []
+            },
+            "retrieved": [],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "24ff6dcde4b1f0a3dda328fd4843b61202fbc9f5d3de14e0b190616af0de7d51"
+      },
+      "reduction": {
+        "case": {
+          "id": "deleted-source-resurrects",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "delete",
+              "id": "policy"
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_delete"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "deleted-source-resurrects",
+          "backend": "sqlite_fts5",
+          "backend_version": "3.40.1",
+          "fault": "drop_delete",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "stale_retrieval",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "c9dd37701b6fd41752665a4dc3663da48c5a0841bad5f0eecf24d1190e718917"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "correction-keeps-stale-index",
+      "backend": "sqlite_fts5",
+      "injected": {
+        "case_id": "correction-keeps-stale-index",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "drop_update",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "stale_retrieval"
+          ],
+          "expected": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval"
+            ],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "4d1d8e31d84a035e593b750ab4bbbe2b431cf5d1f024bd3bfe8bde005ada1cbb"
+      },
+      "repaired": {
+        "case_id": "correction-keeps-stale-index",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "14 days",
+              "revision": 2
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "14 days",
+                "revision": 2
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "4d1d8e31d84a035e593b750ab4bbbe2b431cf5d1f024bd3bfe8bde005ada1cbb"
+      },
+      "reduction": {
+        "case": {
+          "id": "correction-keeps-stale-index",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "upsert",
+              "document": {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "14 days",
+                "revision": 2
+              }
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_update"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "correction-keeps-stale-index",
+          "backend": "sqlite_fts5",
+          "backend_version": "3.40.1",
+          "fault": "drop_update",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval"
+            ],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "stale_retrieval"
+              ],
+              "expected": {
+                "value": "14 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "075360a43f579705dffaf1176d8b140c57bcf68993ccc6f249d79bd9e200704d"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "tenant-canary-leak",
+      "backend": "sqlite_fts5",
+      "injected": {
+        "case_id": "tenant-canary-leak",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "ignore_scope",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "scope_leak",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "CANARY-TENANT-B-ONLY",
+            "source_ids": [
+              "tenant-B-secret"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "tenant-B-secret",
+              "tenant": "tenant-B",
+              "key": "refund_window",
+              "value": "CANARY-TENANT-B-ONLY",
+              "revision": 99
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": [
+            "tenant-B-secret"
+          ]
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "scope_leak",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "CANARY-TENANT-B-ONLY",
+              "source_ids": [
+                "tenant-B-secret"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": [
+              "tenant-B-secret"
+            ]
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
+      },
+      "repaired": {
+        "case_id": "tenant-canary-leak",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
+      },
+      "reduction": {
+        "case": {
+          "id": "tenant-canary-leak",
+          "documents": [
+            {
+              "id": "noise-2",
+              "tenant": "tenant-A",
+              "key": "shipping_city",
+              "value": "Lyon",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "upsert",
+              "document": {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "ignore_scope"
+        },
+        "removed": [
+          "policy",
+          "noise-1"
+        ],
+        "trial": {
+          "case_id": "tenant-canary-leak",
+          "backend": "sqlite_fts5",
+          "backend_version": "3.40.1",
+          "fault": "ignore_scope",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "scope_leak",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "CANARY-TENANT-B-ONLY",
+              "source_ids": [
+                "tenant-B-secret"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": [
+              "tenant-B-secret"
+            ]
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": null,
+                "source_ids": []
+              },
+              "retrieved": [],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "scope_leak",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": "CANARY-TENANT-B-ONLY",
+                "source_ids": [
+                  "tenant-B-secret"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "tenant-B-secret",
+                  "tenant": "tenant-B",
+                  "key": "refund_window",
+                  "value": "CANARY-TENANT-B-ONLY",
+                  "revision": 99
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": [
+                "tenant-B-secret"
+              ]
+            }
+          ],
+          "answer_changed": true,
+          "redundant_support_preserved": false,
+          "case_sha256": "e0e777dbe5b74cae097368a4f84e50680b3a188ba49a771e42374c48a4f4b3fe"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "same-answer-different-support",
+      "backend": "sqlite_fts5",
+      "injected": {
+        "case_id": "same-answer-different-support",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "drop_delete",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "stale_retrieval",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy",
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "756e8aa87ace541335e8aa9ee14fee2cc3ca61c930d231208067a465cf6669ef"
+      },
+      "repaired": {
+        "case_id": "same-answer-different-support",
+        "backend": "sqlite_fts5",
+        "backend_version": "3.40.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": true,
+        "case_sha256": "756e8aa87ace541335e8aa9ee14fee2cc3ca61c930d231208067a465cf6669ef"
+      },
+      "reduction": {
+        "case": {
+          "id": "same-answer-different-support",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "delete",
+              "id": "policy"
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_delete"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "same-answer-different-support",
+          "backend": "sqlite_fts5",
+          "backend_version": "3.40.1",
+          "fault": "drop_delete",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "independent-copy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                },
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "stale_retrieval",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "independent-copy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                },
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "5ecbef9bccff9dfc2712e6ad5eb7f440c15831a8194814f6e9211be6e4d93b09"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "deleted-source-resurrects",
+      "backend": "chroma",
+      "injected": {
+        "case_id": "deleted-source-resurrects",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "drop_delete",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "stale_retrieval",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": null,
+            "source_ids": []
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "revision": 1,
+              "id": "policy",
+              "tenant": "tenant-A",
+              "value": "30 days",
+              "key": "refund_window"
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "id": "policy",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "revision": 1,
+                "id": "policy",
+                "tenant": "tenant-A",
+                "value": "30 days",
+                "key": "refund_window"
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "24ff6dcde4b1f0a3dda328fd4843b61202fbc9f5d3de14e0b190616af0de7d51"
+      },
+      "repaired": {
+        "case_id": "deleted-source-resurrects",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": null,
+            "source_ids": []
+          },
+          "answer": {
+            "value": null,
+            "source_ids": []
+          },
+          "retrieved": [],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "tenant": "tenant-A",
+                "revision": 1,
+                "key": "refund_window",
+                "value": "30 days",
+                "id": "policy"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": null,
+              "source_ids": []
+            },
+            "retrieved": [],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "24ff6dcde4b1f0a3dda328fd4843b61202fbc9f5d3de14e0b190616af0de7d51"
+      },
+      "reduction": {
+        "case": {
+          "id": "deleted-source-resurrects",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "delete",
+              "id": "policy"
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_delete"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "deleted-source-resurrects",
+          "backend": "chroma",
+          "backend_version": "1.5.9",
+          "fault": "drop_delete",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "key": "refund_window",
+                "tenant": "tenant-A",
+                "revision": 1,
+                "value": "30 days"
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "value": "30 days",
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "stale_retrieval",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "key": "refund_window",
+                  "tenant": "tenant-A",
+                  "revision": 1,
+                  "value": "30 days"
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "c9dd37701b6fd41752665a4dc3663da48c5a0841bad5f0eecf24d1190e718917"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "correction-keeps-stale-index",
+      "backend": "chroma",
+      "injected": {
+        "case_id": "correction-keeps-stale-index",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "drop_update",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "stale_retrieval"
+          ],
+          "expected": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "tenant": "tenant-A",
+              "id": "policy",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "tenant": "tenant-A",
+                "value": "30 days",
+                "id": "policy",
+                "key": "refund_window",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval"
+            ],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "tenant": "tenant-A",
+                "id": "policy",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "4d1d8e31d84a035e593b750ab4bbbe2b431cf5d1f024bd3bfe8bde005ada1cbb"
+      },
+      "repaired": {
+        "case_id": "correction-keeps-stale-index",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "key": "refund_window",
+              "id": "policy",
+              "tenant": "tenant-A",
+              "value": "14 days",
+              "revision": 2
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "key": "refund_window",
+                "id": "policy",
+                "revision": 1,
+                "value": "30 days",
+                "tenant": "tenant-A"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "key": "refund_window",
+                "id": "policy",
+                "tenant": "tenant-A",
+                "value": "14 days",
+                "revision": 2
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "4d1d8e31d84a035e593b750ab4bbbe2b431cf5d1f024bd3bfe8bde005ada1cbb"
+      },
+      "reduction": {
+        "case": {
+          "id": "correction-keeps-stale-index",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "upsert",
+              "document": {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "14 days",
+                "revision": 2
+              }
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_update"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "correction-keeps-stale-index",
+          "backend": "chroma",
+          "backend_version": "1.5.9",
+          "fault": "drop_update",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval"
+            ],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "value": "30 days",
+                "tenant": "tenant-A",
+                "id": "policy",
+                "revision": 1,
+                "key": "refund_window"
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "revision": 1,
+                  "value": "30 days",
+                  "key": "refund_window",
+                  "tenant": "tenant-A",
+                  "id": "policy"
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "stale_retrieval"
+              ],
+              "expected": {
+                "value": "14 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "value": "30 days",
+                  "tenant": "tenant-A",
+                  "id": "policy",
+                  "revision": 1,
+                  "key": "refund_window"
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "075360a43f579705dffaf1176d8b140c57bcf68993ccc6f249d79bd9e200704d"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "tenant-canary-leak",
+      "backend": "chroma",
+      "injected": {
+        "case_id": "tenant-canary-leak",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "ignore_scope",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "scope_leak",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "CANARY-TENANT-B-ONLY",
+            "source_ids": [
+              "tenant-B-secret"
+            ]
+          },
+          "retrieved": [
+            {
+              "tenant": "tenant-A",
+              "id": "policy",
+              "key": "refund_window",
+              "revision": 1,
+              "value": "30 days"
+            },
+            {
+              "id": "tenant-B-secret",
+              "key": "refund_window",
+              "revision": 99,
+              "tenant": "tenant-B",
+              "value": "CANARY-TENANT-B-ONLY"
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": [
+            "tenant-B-secret"
+          ]
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "key": "refund_window",
+                "tenant": "tenant-A",
+                "revision": 1,
+                "value": "30 days",
+                "id": "policy"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "scope_leak",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "CANARY-TENANT-B-ONLY",
+              "source_ids": [
+                "tenant-B-secret"
+              ]
+            },
+            "retrieved": [
+              {
+                "tenant": "tenant-A",
+                "id": "policy",
+                "key": "refund_window",
+                "revision": 1,
+                "value": "30 days"
+              },
+              {
+                "id": "tenant-B-secret",
+                "key": "refund_window",
+                "revision": 99,
+                "tenant": "tenant-B",
+                "value": "CANARY-TENANT-B-ONLY"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": [
+              "tenant-B-secret"
+            ]
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
+      },
+      "repaired": {
+        "case_id": "tenant-canary-leak",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "revision": 1,
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "id": "policy"
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "key": "refund_window",
+                "tenant": "tenant-A",
+                "id": "policy",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "revision": 1,
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "id": "policy"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
+      },
+      "reduction": {
+        "case": {
+          "id": "tenant-canary-leak",
+          "documents": [
+            {
+              "id": "noise-2",
+              "tenant": "tenant-A",
+              "key": "shipping_city",
+              "value": "Lyon",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "upsert",
+              "document": {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "ignore_scope"
+        },
+        "removed": [
+          "policy",
+          "noise-1"
+        ],
+        "trial": {
+          "case_id": "tenant-canary-leak",
+          "backend": "chroma",
+          "backend_version": "1.5.9",
+          "fault": "ignore_scope",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "scope_leak",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "CANARY-TENANT-B-ONLY",
+              "source_ids": [
+                "tenant-B-secret"
+              ]
+            },
+            "retrieved": [
+              {
+                "revision": 99,
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": [
+              "tenant-B-secret"
+            ]
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": null,
+                "source_ids": []
+              },
+              "retrieved": [],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "scope_leak",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": "CANARY-TENANT-B-ONLY",
+                "source_ids": [
+                  "tenant-B-secret"
+                ]
+              },
+              "retrieved": [
+                {
+                  "revision": 99,
+                  "key": "refund_window",
+                  "value": "CANARY-TENANT-B-ONLY",
+                  "id": "tenant-B-secret",
+                  "tenant": "tenant-B"
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": [
+                "tenant-B-secret"
+              ]
+            }
+          ],
+          "answer_changed": true,
+          "redundant_support_preserved": false,
+          "case_sha256": "e0e777dbe5b74cae097368a4f84e50680b3a188ba49a771e42374c48a4f4b3fe"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "same-answer-different-support",
+      "backend": "chroma",
+      "injected": {
+        "case_id": "same-answer-different-support",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "drop_delete",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "stale_retrieval",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy",
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "independent-copy",
+              "revision": 1,
+              "key": "refund_window",
+              "value": "30 days",
+              "tenant": "tenant-A"
+            },
+            {
+              "tenant": "tenant-A",
+              "id": "policy",
+              "revision": 1,
+              "key": "refund_window",
+              "value": "30 days"
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "revision": 1,
+                "tenant": "tenant-A",
+                "id": "independent-copy",
+                "value": "30 days",
+                "key": "refund_window"
+              },
+              {
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1,
+                "id": "policy",
+                "tenant": "tenant-A"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "revision": 1,
+                "key": "refund_window",
+                "value": "30 days",
+                "tenant": "tenant-A"
+              },
+              {
+                "tenant": "tenant-A",
+                "id": "policy",
+                "revision": 1,
+                "key": "refund_window",
+                "value": "30 days"
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "756e8aa87ace541335e8aa9ee14fee2cc3ca61c930d231208067a465cf6669ef"
+      },
+      "repaired": {
+        "case_id": "same-answer-different-support",
+        "backend": "chroma",
+        "backend_version": "1.5.9",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "independent-copy",
+              "key": "refund_window",
+              "tenant": "tenant-A",
+              "revision": 1,
+              "value": "30 days"
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "revision": 1,
+                "value": "30 days",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "id": "independent-copy"
+              },
+              {
+                "tenant": "tenant-A",
+                "revision": 1,
+                "id": "policy",
+                "key": "refund_window",
+                "value": "30 days"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "key": "refund_window",
+                "tenant": "tenant-A",
+                "revision": 1,
+                "value": "30 days"
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": true,
+        "case_sha256": "756e8aa87ace541335e8aa9ee14fee2cc3ca61c930d231208067a465cf6669ef"
+      },
+      "reduction": {
+        "case": {
+          "id": "same-answer-different-support",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "delete",
+              "id": "policy"
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_delete"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "same-answer-different-support",
+          "backend": "chroma",
+          "backend_version": "1.5.9",
+          "fault": "drop_delete",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1,
+                "tenant": "tenant-A",
+                "id": "independent-copy"
+              },
+              {
+                "key": "refund_window",
+                "value": "30 days",
+                "id": "policy",
+                "tenant": "tenant-A",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "value": "30 days",
+                  "key": "refund_window",
+                  "tenant": "tenant-A",
+                  "revision": 1,
+                  "id": "independent-copy"
+                },
+                {
+                  "id": "policy",
+                  "revision": 1,
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days"
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "stale_retrieval",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1,
+                  "tenant": "tenant-A",
+                  "id": "independent-copy"
+                },
+                {
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "5ecbef9bccff9dfc2712e6ad5eb7f440c15831a8194814f6e9211be6e4d93b09"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "deleted-source-resurrects",
+      "backend": "qdrant_local",
+      "injected": {
+        "case_id": "deleted-source-resurrects",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "drop_delete",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "stale_retrieval",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": null,
+            "source_ids": []
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "24ff6dcde4b1f0a3dda328fd4843b61202fbc9f5d3de14e0b190616af0de7d51"
+      },
+      "repaired": {
+        "case_id": "deleted-source-resurrects",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": null,
+            "source_ids": []
+          },
+          "answer": {
+            "value": null,
+            "source_ids": []
+          },
+          "retrieved": [],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": null,
+              "source_ids": []
+            },
+            "retrieved": [],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "24ff6dcde4b1f0a3dda328fd4843b61202fbc9f5d3de14e0b190616af0de7d51"
+      },
+      "reduction": {
+        "case": {
+          "id": "deleted-source-resurrects",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "delete",
+              "id": "policy"
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_delete"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "deleted-source-resurrects",
+          "backend": "qdrant_local",
+          "backend_version": "1.19.1",
+          "fault": "drop_delete",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "stale_retrieval",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "c9dd37701b6fd41752665a4dc3663da48c5a0841bad5f0eecf24d1190e718917"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "correction-keeps-stale-index",
+      "backend": "qdrant_local",
+      "injected": {
+        "case_id": "correction-keeps-stale-index",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "drop_update",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "stale_retrieval"
+          ],
+          "expected": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval"
+            ],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "4d1d8e31d84a035e593b750ab4bbbe2b431cf5d1f024bd3bfe8bde005ada1cbb"
+      },
+      "repaired": {
+        "case_id": "correction-keeps-stale-index",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "14 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "14 days",
+              "revision": 2
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "14 days",
+                "revision": 2
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "4d1d8e31d84a035e593b750ab4bbbe2b431cf5d1f024bd3bfe8bde005ada1cbb"
+      },
+      "reduction": {
+        "case": {
+          "id": "correction-keeps-stale-index",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "upsert",
+              "document": {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "14 days",
+                "revision": 2
+              }
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_update"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "correction-keeps-stale-index",
+          "backend": "qdrant_local",
+          "backend_version": "1.19.1",
+          "fault": "drop_update",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "stale_retrieval"
+            ],
+            "expected": {
+              "value": "14 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "stale_retrieval"
+              ],
+              "expected": {
+                "value": "14 days",
+                "source_ids": [
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "075360a43f579705dffaf1176d8b140c57bcf68993ccc6f249d79bd9e200704d"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "tenant-canary-leak",
+      "backend": "qdrant_local",
+      "injected": {
+        "case_id": "tenant-canary-leak",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "ignore_scope",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "answer_mismatch",
+            "scope_leak",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "CANARY-TENANT-B-ONLY",
+            "source_ids": [
+              "tenant-B-secret"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "tenant-B-secret",
+              "tenant": "tenant-B",
+              "key": "refund_window",
+              "value": "CANARY-TENANT-B-ONLY",
+              "revision": 99
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": [
+            "tenant-B-secret"
+          ]
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "scope_leak",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "CANARY-TENANT-B-ONLY",
+              "source_ids": [
+                "tenant-B-secret"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": [
+              "tenant-B-secret"
+            ]
+          }
+        ],
+        "answer_changed": true,
+        "redundant_support_preserved": false,
+        "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
+      },
+      "repaired": {
+        "case_id": "tenant-canary-leak",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
+      },
+      "reduction": {
+        "case": {
+          "id": "tenant-canary-leak",
+          "documents": [
+            {
+              "id": "noise-2",
+              "tenant": "tenant-A",
+              "key": "shipping_city",
+              "value": "Lyon",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "upsert",
+              "document": {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "ignore_scope"
+        },
+        "removed": [
+          "policy",
+          "noise-1"
+        ],
+        "trial": {
+          "case_id": "tenant-canary-leak",
+          "backend": "qdrant_local",
+          "backend_version": "1.19.1",
+          "fault": "ignore_scope",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "answer_mismatch",
+              "scope_leak",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": null,
+              "source_ids": []
+            },
+            "answer": {
+              "value": "CANARY-TENANT-B-ONLY",
+              "source_ids": [
+                "tenant-B-secret"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B",
+                "key": "refund_window",
+                "value": "CANARY-TENANT-B-ONLY",
+                "revision": 99
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": [
+              "tenant-B-secret"
+            ]
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": null,
+                "source_ids": []
+              },
+              "retrieved": [],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "answer_mismatch",
+                "scope_leak",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": null,
+                "source_ids": []
+              },
+              "answer": {
+                "value": "CANARY-TENANT-B-ONLY",
+                "source_ids": [
+                  "tenant-B-secret"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "tenant-B-secret",
+                  "tenant": "tenant-B",
+                  "key": "refund_window",
+                  "value": "CANARY-TENANT-B-ONLY",
+                  "revision": 99
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": [
+                "tenant-B-secret"
+              ]
+            }
+          ],
+          "answer_changed": true,
+          "redundant_support_preserved": false,
+          "case_sha256": "e0e777dbe5b74cae097368a4f84e50680b3a188ba49a771e42374c48a4f4b3fe"
+        },
+        "locally_minimal": true
+      }
+    },
+    {
+      "case_id": "same-answer-different-support",
+      "backend": "qdrant_local",
+      "injected": {
+        "case_id": "same-answer-different-support",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "drop_delete",
+        "fault_is_injected_client_integration": true,
+        "initial_passed": true,
+        "passed": false,
+        "final": {
+          "stage": "mutation_1",
+          "passed": false,
+          "failures": [
+            "stale_retrieval",
+            "invalid_support"
+          ],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy",
+              "policy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [
+            "policy"
+          ],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": false,
+        "case_sha256": "756e8aa87ace541335e8aa9ee14fee2cc3ca61c930d231208067a465cf6669ef"
+      },
+      "repaired": {
+        "case_id": "same-answer-different-support",
+        "backend": "qdrant_local",
+        "backend_version": "1.19.1",
+        "fault": "none",
+        "fault_is_injected_client_integration": false,
+        "initial_passed": true,
+        "passed": true,
+        "final": {
+          "stage": "mutation_1",
+          "passed": true,
+          "failures": [],
+          "expected": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ],
+            "conflict": false
+          },
+          "answer": {
+            "value": "30 days",
+            "source_ids": [
+              "independent-copy"
+            ]
+          },
+          "retrieved": [
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "stale_ids": [],
+          "leaked_ids": []
+        },
+        "trace": [
+          {
+            "stage": "baseline",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          },
+          {
+            "stage": "mutation_1",
+            "passed": true,
+            "failures": [],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [],
+            "leaked_ids": []
+          }
+        ],
+        "answer_changed": false,
+        "redundant_support_preserved": true,
+        "case_sha256": "756e8aa87ace541335e8aa9ee14fee2cc3ca61c930d231208067a465cf6669ef"
+      },
+      "reduction": {
+        "case": {
+          "id": "same-answer-different-support",
+          "documents": [
+            {
+              "id": "policy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            },
+            {
+              "id": "independent-copy",
+              "tenant": "tenant-A",
+              "key": "refund_window",
+              "value": "30 days",
+              "revision": 1
+            }
+          ],
+          "operations": [
+            {
+              "type": "delete",
+              "id": "policy"
+            }
+          ],
+          "query": {
+            "tenant": "tenant-A",
+            "key": "refund_window"
+          },
+          "injected_fault": "drop_delete"
+        },
+        "removed": [
+          "noise-1",
+          "noise-2"
+        ],
+        "trial": {
+          "case_id": "same-answer-different-support",
+          "backend": "qdrant_local",
+          "backend_version": "1.19.1",
+          "fault": "drop_delete",
+          "fault_is_injected_client_integration": true,
+          "initial_passed": true,
+          "passed": false,
+          "final": {
+            "stage": "mutation_1",
+            "passed": false,
+            "failures": [
+              "stale_retrieval",
+              "invalid_support"
+            ],
+            "expected": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy"
+              ],
+              "conflict": false
+            },
+            "answer": {
+              "value": "30 days",
+              "source_ids": [
+                "independent-copy",
+                "policy"
+              ]
+            },
+            "retrieved": [
+              {
+                "id": "independent-copy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              },
+              {
+                "id": "policy",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "value": "30 days",
+                "revision": 1
+              }
+            ],
+            "stale_ids": [
+              "policy"
+            ],
+            "leaked_ids": []
+          },
+          "trace": [
+            {
+              "stage": "baseline",
+              "passed": true,
+              "failures": [],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "independent-copy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                },
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [],
+              "leaked_ids": []
+            },
+            {
+              "stage": "mutation_1",
+              "passed": false,
+              "failures": [
+                "stale_retrieval",
+                "invalid_support"
+              ],
+              "expected": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy"
+                ],
+                "conflict": false
+              },
+              "answer": {
+                "value": "30 days",
+                "source_ids": [
+                  "independent-copy",
+                  "policy"
+                ]
+              },
+              "retrieved": [
+                {
+                  "id": "independent-copy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                },
+                {
+                  "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
+                  "value": "30 days",
+                  "revision": 1
+                }
+              ],
+              "stale_ids": [
+                "policy"
+              ],
+              "leaked_ids": []
+            }
+          ],
+          "answer_changed": false,
+          "redundant_support_preserved": false,
+          "case_sha256": "5ecbef9bccff9dfc2712e6ad5eb7f440c15831a8194814f6e9211be6e4d93b09"
+        },
+        "locally_minimal": true
+      }
+    }
+  ],
+  "paired_trials": 12,
+  "repaired_passed": 12,
+  "injected_detected": 12,
+  "upstream_bugs_claimed": 0,
+  "human_adoption_claimed": false
+}
