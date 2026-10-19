@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BrainBreakers</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">BRAIN / BREAKERS</a>
+      <nav aria-label="Language">
+        <a href="?lang=fr">FR</a><a href="?lang=en">EN</a><a href="?lang=es">ES</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <h1 data-i18n="title"></h1>
+        <p class="lede" data-i18n="lede"></p>
+      </section>
+      <section class="workspace">
+        <aside>
+          <span class="number">01 /</span>
+          <h2 data-i18n="experiment"></h2>
+          <p class="hint" data-i18n="explain"></p>
+          <button id="run" data-i18n="run"></button
+          ><button id="published" class="secondary" data-i18n="published"></button
+          ><label class="field" for="filter" data-i18n="filter"></label
+          ><select id="filter">
+            <option value="all" data-i18n="all"></option>
+            <option
+              value="deleted-source-resurrects"
+              data-i18n="deleted-source-resurrects"
+            ></option>
+            <option
+              value="correction-keeps-stale-index"
+              data-i18n="correction-keeps-stale-index"
+            ></option>
+            <option value="tenant-canary-leak" data-i18n="tenant-canary-leak"></option>
+            <option
+              value="same-answer-different-support"
+              data-i18n="same-answer-different-support"
+            ></option>
+          </select>
+          <p id="status" role="status"></p>
+          <p class="hint" data-i18n="noNetwork"></p>
+        </aside>
+        <article>
+          <div class="section-head">
+            <div>
+              <span class="number">02 /</span>
+              <h2 data-i18n="results"></h2>
+            </div>
+            <span class="badge" id="mode"></span>
+          </div>
+          <div class="metrics">
+            <div><strong id="trials">—</strong><span data-i18n="trials"></span></div>
+            <div><strong id="detected">—</strong><span data-i18n="detected"></span></div>
+            <div><strong id="repaired">—</strong><span data-i18n="repaired"></span></div>
+          </div>
+          <div id="results"></div>
+          <div class="actions">
+            <button id="download" class="secondary" data-i18n="download"></button>
+          </div>
+        </article>
+      </section>
+      <footer>
+        <p data-i18n="limits"></p>
+        <a href="https://github.com/gbesse/brain-breakers">GitHub ↗</a>
+      </footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
