@@ -14,6 +14,7 @@ class MemoryTests(unittest.TestCase):
         r=run_trial(examples()[1]);self.assertEqual(r['final']['answer'],{'value':'14 days','source_ids':['policy']});self.assertTrue(r['answer_changed'])
     def test_scope_canary_detected_even_when_other_source_exists(self):
         r=run_trial(examples()[2],fault='ignore_scope');self.assertIn('scope_leak',r['final']['failures']);self.assertEqual(r['final']['leaked_ids'],['tenant-B-secret'])
+        self.assertFalse(run_trial(examples()[2])['redundant_support_preserved'])
     def test_same_answer_is_legitimate_when_independent_support_remains(self):
         r=run_trial(examples()[3]);self.assertTrue(r['redundant_support_preserved']);self.assertEqual(r['final']['answer']['source_ids'],['independent-copy']);self.assertFalse(r['answer_changed'])
     def test_same_answer_does_not_hide_deleted_retrieval(self):

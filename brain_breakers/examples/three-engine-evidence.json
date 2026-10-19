@@ -914,7 +914,7 @@
           }
         ],
         "answer_changed": false,
-        "redundant_support_preserved": true,
+        "redundant_support_preserved": false,
         "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
       },
       "reduction": {
@@ -1503,10 +1503,10 @@
           "retrieved": [
             {
               "revision": 1,
-              "value": "30 days",
-              "key": "refund_window",
               "id": "policy",
-              "tenant": "tenant-A"
+              "tenant": "tenant-A",
+              "value": "30 days",
+              "key": "refund_window"
             }
           ],
           "stale_ids": [
@@ -1534,11 +1534,11 @@
             },
             "retrieved": [
               {
-                "revision": 1,
+                "tenant": "tenant-A",
+                "key": "refund_window",
                 "id": "policy",
                 "value": "30 days",
-                "key": "refund_window",
-                "tenant": "tenant-A"
+                "revision": 1
               }
             ],
             "stale_ids": [],
@@ -1565,10 +1565,10 @@
             "retrieved": [
               {
                 "revision": 1,
-                "value": "30 days",
-                "key": "refund_window",
                 "id": "policy",
-                "tenant": "tenant-A"
+                "tenant": "tenant-A",
+                "value": "30 days",
+                "key": "refund_window"
               }
             ],
             "stale_ids": [
@@ -1625,11 +1625,11 @@
             },
             "retrieved": [
               {
-                "revision": 1,
-                "id": "policy",
-                "key": "refund_window",
                 "tenant": "tenant-A",
-                "value": "30 days"
+                "revision": 1,
+                "key": "refund_window",
+                "value": "30 days",
+                "id": "policy"
               }
             ],
             "stale_ids": [],
@@ -1712,11 +1712,11 @@
             },
             "retrieved": [
               {
-                "value": "30 days",
+                "id": "policy",
+                "key": "refund_window",
                 "tenant": "tenant-A",
                 "revision": 1,
-                "key": "refund_window",
-                "id": "policy"
+                "value": "30 days"
               }
             ],
             "stale_ids": [
@@ -1744,10 +1744,10 @@
               },
               "retrieved": [
                 {
-                  "tenant": "tenant-A",
                   "value": "30 days",
-                  "key": "refund_window",
                   "id": "policy",
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
                   "revision": 1
                 }
               ],
@@ -1774,11 +1774,11 @@
               },
               "retrieved": [
                 {
-                  "value": "30 days",
+                  "id": "policy",
+                  "key": "refund_window",
                   "tenant": "tenant-A",
                   "revision": 1,
-                  "key": "refund_window",
-                  "id": "policy"
+                  "value": "30 days"
                 }
               ],
               "stale_ids": [
@@ -1828,10 +1828,10 @@
           "retrieved": [
             {
               "tenant": "tenant-A",
+              "id": "policy",
               "key": "refund_window",
               "value": "30 days",
-              "revision": 1,
-              "id": "policy"
+              "revision": 1
             }
           ],
           "stale_ids": [
@@ -1859,11 +1859,11 @@
             },
             "retrieved": [
               {
-                "revision": 1,
                 "tenant": "tenant-A",
-                "key": "refund_window",
                 "value": "30 days",
-                "id": "policy"
+                "id": "policy",
+                "key": "refund_window",
+                "revision": 1
               }
             ],
             "stale_ids": [],
@@ -1892,10 +1892,10 @@
             "retrieved": [
               {
                 "tenant": "tenant-A",
+                "id": "policy",
                 "key": "refund_window",
                 "value": "30 days",
-                "revision": 1,
-                "id": "policy"
+                "revision": 1
               }
             ],
             "stale_ids": [
@@ -1935,11 +1935,11 @@
           },
           "retrieved": [
             {
-              "revision": 2,
-              "id": "policy",
               "key": "refund_window",
+              "id": "policy",
+              "tenant": "tenant-A",
               "value": "14 days",
-              "tenant": "tenant-A"
+              "revision": 2
             }
           ],
           "stale_ids": [],
@@ -1965,11 +1965,11 @@
             },
             "retrieved": [
               {
-                "value": "30 days",
-                "tenant": "tenant-A",
-                "revision": 1,
                 "key": "refund_window",
-                "id": "policy"
+                "id": "policy",
+                "revision": 1,
+                "value": "30 days",
+                "tenant": "tenant-A"
               }
             ],
             "stale_ids": [],
@@ -1994,11 +1994,11 @@
             },
             "retrieved": [
               {
-                "revision": 2,
-                "id": "policy",
                 "key": "refund_window",
+                "id": "policy",
+                "tenant": "tenant-A",
                 "value": "14 days",
-                "tenant": "tenant-A"
+                "revision": 2
               }
             ],
             "stale_ids": [],
@@ -2107,9 +2107,9 @@
                 {
                   "revision": 1,
                   "value": "30 days",
-                  "id": "policy",
                   "key": "refund_window",
-                  "tenant": "tenant-A"
+                  "tenant": "tenant-A",
+                  "id": "policy"
                 }
               ],
               "stale_ids": [],
@@ -2191,17 +2191,17 @@
           },
           "retrieved": [
             {
+              "tenant": "tenant-A",
+              "id": "policy",
               "key": "refund_window",
               "revision": 1,
-              "value": "30 days",
-              "tenant": "tenant-A",
-              "id": "policy"
+              "value": "30 days"
             },
             {
-              "key": "refund_window",
               "id": "tenant-B-secret",
-              "tenant": "tenant-B",
+              "key": "refund_window",
               "revision": 99,
+              "tenant": "tenant-B",
               "value": "CANARY-TENANT-B-ONLY"
             }
           ],
@@ -2230,11 +2230,11 @@
             },
             "retrieved": [
               {
-                "id": "policy",
-                "tenant": "tenant-A",
                 "key": "refund_window",
+                "tenant": "tenant-A",
+                "revision": 1,
                 "value": "30 days",
-                "revision": 1
+                "id": "policy"
               }
             ],
             "stale_ids": [],
@@ -2263,17 +2263,17 @@
             },
             "retrieved": [
               {
+                "tenant": "tenant-A",
+                "id": "policy",
                 "key": "refund_window",
                 "revision": 1,
-                "value": "30 days",
-                "tenant": "tenant-A",
-                "id": "policy"
+                "value": "30 days"
               },
               {
-                "key": "refund_window",
                 "id": "tenant-B-secret",
-                "tenant": "tenant-B",
+                "key": "refund_window",
                 "revision": 99,
+                "tenant": "tenant-B",
                 "value": "CANARY-TENANT-B-ONLY"
               }
             ],
@@ -2314,11 +2314,11 @@
           },
           "retrieved": [
             {
+              "revision": 1,
               "tenant": "tenant-A",
-              "value": "30 days",
               "key": "refund_window",
-              "id": "policy",
-              "revision": 1
+              "value": "30 days",
+              "id": "policy"
             }
           ],
           "stale_ids": [],
@@ -2344,11 +2344,11 @@
             },
             "retrieved": [
               {
-                "value": "30 days",
+                "key": "refund_window",
                 "tenant": "tenant-A",
-                "revision": 1,
                 "id": "policy",
-                "key": "refund_window"
+                "value": "30 days",
+                "revision": 1
               }
             ],
             "stale_ids": [],
@@ -2373,11 +2373,11 @@
             },
             "retrieved": [
               {
+                "revision": 1,
                 "tenant": "tenant-A",
-                "value": "30 days",
                 "key": "refund_window",
-                "id": "policy",
-                "revision": 1
+                "value": "30 days",
+                "id": "policy"
               }
             ],
             "stale_ids": [],
@@ -2385,7 +2385,7 @@
           }
         ],
         "answer_changed": false,
-        "redundant_support_preserved": true,
+        "redundant_support_preserved": false,
         "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
       },
       "reduction": {
@@ -2450,11 +2450,11 @@
             },
             "retrieved": [
               {
-                "key": "refund_window",
-                "tenant": "tenant-B",
                 "revision": 99,
+                "key": "refund_window",
                 "value": "CANARY-TENANT-B-ONLY",
-                "id": "tenant-B-secret"
+                "id": "tenant-B-secret",
+                "tenant": "tenant-B"
               }
             ],
             "stale_ids": [],
@@ -2499,11 +2499,11 @@
               },
               "retrieved": [
                 {
-                  "key": "refund_window",
-                  "tenant": "tenant-B",
                   "revision": 99,
+                  "key": "refund_window",
                   "value": "CANARY-TENANT-B-ONLY",
-                  "id": "tenant-B-secret"
+                  "id": "tenant-B-secret",
+                  "tenant": "tenant-B"
                 }
               ],
               "stale_ids": [],
@@ -2553,18 +2553,18 @@
           },
           "retrieved": [
             {
+              "id": "independent-copy",
               "revision": 1,
-              "value": "30 days",
-              "tenant": "tenant-A",
               "key": "refund_window",
-              "id": "independent-copy"
+              "value": "30 days",
+              "tenant": "tenant-A"
             },
             {
-              "revision": 1,
+              "tenant": "tenant-A",
               "id": "policy",
-              "value": "30 days",
+              "revision": 1,
               "key": "refund_window",
-              "tenant": "tenant-A"
+              "value": "30 days"
             }
           ],
           "stale_ids": [
@@ -2594,18 +2594,18 @@
             },
             "retrieved": [
               {
-                "value": "30 days",
-                "id": "independent-copy",
                 "revision": 1,
-                "key": "refund_window",
-                "tenant": "tenant-A"
+                "tenant": "tenant-A",
+                "id": "independent-copy",
+                "value": "30 days",
+                "key": "refund_window"
               },
               {
                 "key": "refund_window",
+                "value": "30 days",
                 "revision": 1,
-                "tenant": "tenant-A",
                 "id": "policy",
-                "value": "30 days"
+                "tenant": "tenant-A"
               }
             ],
             "stale_ids": [],
@@ -2634,18 +2634,18 @@
             },
             "retrieved": [
               {
+                "id": "independent-copy",
                 "revision": 1,
-                "value": "30 days",
-                "tenant": "tenant-A",
                 "key": "refund_window",
-                "id": "independent-copy"
+                "value": "30 days",
+                "tenant": "tenant-A"
               },
               {
-                "revision": 1,
+                "tenant": "tenant-A",
                 "id": "policy",
-                "value": "30 days",
+                "revision": 1,
                 "key": "refund_window",
-                "tenant": "tenant-A"
+                "value": "30 days"
               }
             ],
             "stale_ids": [
@@ -2685,11 +2685,11 @@
           },
           "retrieved": [
             {
-              "value": "30 days",
-              "revision": 1,
               "id": "independent-copy",
+              "key": "refund_window",
               "tenant": "tenant-A",
-              "key": "refund_window"
+              "revision": 1,
+              "value": "30 days"
             }
           ],
           "stale_ids": [],
@@ -2717,18 +2717,18 @@
             },
             "retrieved": [
               {
-                "tenant": "tenant-A",
-                "id": "independent-copy",
-                "value": "30 days",
                 "revision": 1,
-                "key": "refund_window"
+                "value": "30 days",
+                "tenant": "tenant-A",
+                "key": "refund_window",
+                "id": "independent-copy"
               },
               {
-                "revision": 1,
-                "key": "refund_window",
-                "value": "30 days",
                 "tenant": "tenant-A",
-                "id": "policy"
+                "revision": 1,
+                "id": "policy",
+                "key": "refund_window",
+                "value": "30 days"
               }
             ],
             "stale_ids": [],
@@ -2753,11 +2753,11 @@
             },
             "retrieved": [
               {
-                "value": "30 days",
-                "revision": 1,
                 "id": "independent-copy",
+                "key": "refund_window",
                 "tenant": "tenant-A",
-                "key": "refund_window"
+                "revision": 1,
+                "value": "30 days"
               }
             ],
             "stale_ids": [],
@@ -2834,17 +2834,17 @@
             },
             "retrieved": [
               {
-                "id": "independent-copy",
-                "tenant": "tenant-A",
                 "key": "refund_window",
                 "value": "30 days",
-                "revision": 1
+                "revision": 1,
+                "tenant": "tenant-A",
+                "id": "independent-copy"
               },
               {
+                "key": "refund_window",
                 "value": "30 days",
                 "id": "policy",
                 "tenant": "tenant-A",
-                "key": "refund_window",
                 "revision": 1
               }
             ],
@@ -2875,17 +2875,17 @@
               },
               "retrieved": [
                 {
-                  "id": "independent-copy",
+                  "value": "30 days",
                   "key": "refund_window",
-                  "revision": 1,
                   "tenant": "tenant-A",
-                  "value": "30 days"
+                  "revision": 1,
+                  "id": "independent-copy"
                 },
                 {
-                  "key": "refund_window",
-                  "tenant": "tenant-A",
-                  "revision": 1,
                   "id": "policy",
+                  "revision": 1,
+                  "tenant": "tenant-A",
+                  "key": "refund_window",
                   "value": "30 days"
                 }
               ],
@@ -2915,17 +2915,17 @@
               },
               "retrieved": [
                 {
-                  "id": "independent-copy",
-                  "tenant": "tenant-A",
                   "key": "refund_window",
                   "value": "30 days",
-                  "revision": 1
+                  "revision": 1,
+                  "tenant": "tenant-A",
+                  "id": "independent-copy"
                 },
                 {
+                  "key": "refund_window",
                   "value": "30 days",
                   "id": "policy",
                   "tenant": "tenant-A",
-                  "key": "refund_window",
                   "revision": 1
                 }
               ],
@@ -3856,7 +3856,7 @@
           }
         ],
         "answer_changed": false,
-        "redundant_support_preserved": true,
+        "redundant_support_preserved": false,
         "case_sha256": "03c555550e63d9cd99dbfccc8db503bf5fdf6788bec515224df09bfa440b755f"
       },
       "reduction": {

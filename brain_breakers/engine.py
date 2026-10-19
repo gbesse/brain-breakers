@@ -65,7 +65,7 @@ def run_trial(case,backend="sqlite_fts5",fault="none"):
             probe(f"mutation_{i+1}")
         final=trace[-1]
         return {"case_id":case["id"],"backend":backend,"backend_version":adapter.version,"fault":fault,"fault_is_injected_client_integration":fault!="none","initial_passed":initial["passed"],"passed":all(t["passed"] for t in trace),"final":final,"trace":trace,
-            "answer_changed":initial["answer"]["value"]!=final["answer"]["value"],"redundant_support_preserved":initial["answer"]["value"]==final["answer"]["value"] and final["passed"] and bool(final["answer"]["source_ids"]),
+            "answer_changed":initial["answer"]["value"]!=final["answer"]["value"],"redundant_support_preserved":initial["answer"]["value"]==final["answer"]["value"] and final["passed"] and bool(final["answer"]["source_ids"]) and bool(set(initial["answer"]["source_ids"])-set(final["answer"]["source_ids"])),
             "case_sha256":hashlib.sha256(json.dumps(case,sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()).hexdigest()}
     finally:adapter.close()
 
